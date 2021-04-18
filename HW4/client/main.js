@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {Meteor} from 'meteor/meteor';
+import {UP_Collection_Access} from './../imports/api/user_posts.js';
+
 
 const renderPosts = function (passed_posts) {
   console.log(passed_posts);
@@ -10,13 +12,36 @@ const renderPosts = function (passed_posts) {
   return formattedPosts;
 };
 
+const processFormDataFunction = function(event){
+  event.preventDefault();
+  let newTopic = event.target.topicFromForm.value;
+  if(newTopic) {
+    event.target.topicFromForm.value = '';
+    UP_Collection_Access.insert({
+      topic: newTopic,
+      votes: 0,
+    });
+  }
+};
+
 Meteor.startup(function() {
-  let title = "Fake Facebook";
-  // let jsx = (
-  //   <div>
-  //     <h1>{title}</h1>
-  //     {renderPosts(posts)}
-  //   </div>
-  // )
+  Tracker.autorun(function(){
+    //put db stuff in here
+    
+    let title = "Fake Facebook";
+    const allPostInDB = UP_Collection_Access.find().fetch();
+    let jsx = (
+      <div>
+        <h1>{title}</h1>
+        <form onSubmit={processFormDataFunction}>
+          <input type="text" name="topicFromForm" placeholder="Topic Here" />
+          <button>Add Topic</button>
+        </form>
+        {renderPosts(allPostInDB)}
+      </div>
+    );
+
+    ReactDom.render(jsx, document.getElementById("content"));
+  });
 
 });
