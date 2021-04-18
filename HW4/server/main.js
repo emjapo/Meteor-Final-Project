@@ -3,29 +3,6 @@ import {Meteor} from 'meteor/meteor';
 import {UP_Collection_Access} from './../imports/api/user_posts.js';
 
 Meteor.startup(function(){
-  class Person {
-    constructor(name = "anonymous", age = 0){
-      this.name = name;
-      this.age = age;
-    }
-    getPersonDescription(){
-      return `${this.name} is ${this.age} years old`;
-    }
-
-  }
-
-  class Employee extends Person {
-    constructor(name, age, title) {
-      super(name, age);
-      this.title = title;
-    }
-    hasJob(){
-      return !!this.title;
-    }
-  }
-
-  let me = new Person("Emily", 21);
-  console.log(me.getPersonDescription());
-
+  
 
 });
