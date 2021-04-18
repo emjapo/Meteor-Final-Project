@@ -12,7 +12,17 @@ Meteor.startup(function(){
       return `${this.name} is ${this.age} years old`;
     }
 
-  };
+  }
+
+  class Employee extends Person {
+    constructor(name, age, title) {
+      super(name, age);
+      this.title = title;
+    }
+    hasJob(){
+      return !!this.title;
+    }
+  }
 
   let me = new Person("Emily", 21);
   console.log(me.getPersonDescription());
