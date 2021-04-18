@@ -38,7 +38,6 @@ const processFormDataFunction = function(event){
 
 Meteor.startup(function() {
   Tracker.autorun(function(){
-    //put db stuff in here
     
     let title = "Fakebook";
     const allPostInDB = UP_Collection_Access.find().fetch();
