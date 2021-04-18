@@ -7,7 +7,13 @@ import {UP_Collection_Access} from './../imports/api/user_posts.js';
 const renderPosts = function (passed_posts) {
   console.log(passed_posts);
   let formattedPosts = passed_posts.map(function(post){
-    return <p key={post._id}>{post.topic} have {post.votes} vote[s]</p>
+    return (
+    <p key={post._id}>{post.topic} have {post.votes} vote[s] {' '}
+    <button onClick={() => {
+      UP_Collection_Access.remove({_id: post._id});
+    }}>X</button>
+    </p>
+    );
   });
   return formattedPosts;
 };
@@ -28,7 +34,7 @@ Meteor.startup(function() {
   Tracker.autorun(function(){
     //put db stuff in here
     
-    let title = "Fake Facebook";
+    let title = "Fakebook";
     const allPostInDB = UP_Collection_Access.find().fetch();
     let jsx = (
       <div>
