@@ -22,7 +22,7 @@ export default class AddTopics extends React.Component {
         <div className="singleItemStyle">
           <form onSubmit={this.processFormData.bind(this)}>
             <input type="text" name="topicFromForm" placeholder="Topic Here" />
-            <button>Add Topic</button>
+            <button className="button">Add Topic</button>
           </form>
         </div>
       );

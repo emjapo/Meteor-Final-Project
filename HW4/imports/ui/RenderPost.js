@@ -8,13 +8,13 @@ export default class RenderPost extends React.Component {
         return (
             <>
                 <div key={this.props.post._id} className='singleItemStyle'>{this.props.post.topic} have {this.props.post.votes} vote[s] {' '}
-                    <button onClick={() => {
+                    <button className="button button--round" onClick={() => {
                         UP_Collection_Access.update({_id: this.props.post._id}, {$inc: {votes: 1}});
                     }}>+1</button>
-                    <button onClick={() => {
+                    <button className="button button--round" onClick={() => {
                         UP_Collection_Access.update({_id: this.props.post._id}, {$inc: {votes: -1}});
                     }}>-1</button>
-                    <button onClick={() => {
+                    <button className="button button--round" onClick={() => {
                         UP_Collection_Access.remove({_id: this.props.post._id});
                     }}>X</button>
                 </div>

@@ -13,7 +13,7 @@ body {
 }
   
 h1 { // child of title-bar
-    font-weight: 300;
+    font-weight: 500;
     font-size: 2.4rem;
 }
   
@@ -21,3 +21,4 @@ h1 { // child of title-bar
 @import './components/wrapper';
 @import './components/singleItem';
 @import './components/footer';
+@import './components/button';
