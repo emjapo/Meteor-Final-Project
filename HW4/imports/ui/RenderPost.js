@@ -19,9 +19,9 @@ export default class RenderPost extends React.Component {
                     }}>X</button>
                 </p>
             </>
-        )
+        );
     }
-}
+};
 
 RenderPost.propTypes = {
     post: PropTypes.object.isRequired,
