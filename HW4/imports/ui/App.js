@@ -3,6 +3,7 @@ import {UP_Collection_Access} from './../api/user_posts.js';
 import TitleBar from './TitleBar.js';
 import AddTopics from './AddTopics.js';
 import TopicList from './TopicList.js';
+import Footer from './Footer.js';
 import PropTypes from 'prop-types';
 
 export default class App extends React.Component {
@@ -14,6 +15,7 @@ export default class App extends React.Component {
                     <AddTopics />
                     <TopicList passed_posts={this.props.passedPropAllPosts}/>
                 </div>
+                <Footer />
             </>
         );
     }
