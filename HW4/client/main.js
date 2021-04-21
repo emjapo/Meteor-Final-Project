@@ -42,14 +42,11 @@ Meteor.startup(function() {
   Tracker.autorun(function(){
     
     let title = "Fakebook";
+    let moderator = "Emily";
     const allPostInDB = UP_Collection_Access.find().fetch();
     let jsx = (
       <div>
-        <TitleBar title={title}/>
-        <form onSubmit={processFormDataFunction}>
-          <input type="text" name="topicFromForm" placeholder="Topic Here" />
-          <button>Add Topic</button>
-        </form>
+        <TitleBar title={title} moderator={moderator}/>
         <AddTopics />
         {renderPosts(allPostInDB)}
       </div>

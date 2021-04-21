@@ -6,6 +6,7 @@ export default class TitleBar extends React.Component {
       return (
         <>
           <h1>{this.props.title}</h1>
+          <h2>Moderator: {this.props.moderator}</h2>
         </>
       );
     }
@@ -13,6 +14,7 @@ export default class TitleBar extends React.Component {
 
   TitleBar.propTypes = {
       title: PropTypes.string.isRequired,
+      moderator: PropTypes.string.isRequired,
   };
 
  
