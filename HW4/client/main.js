@@ -10,7 +10,7 @@ Meteor.startup(function() {
     
     let title = "Fakebook";
     let moderator = "Emily";
-    const allPostInDB = UP_Collection_Access.find().fetch();
+    const allPostInDB = UP_Collection_Access.find({}, {sort: {votes: -1}}).fetch();
     
 
     ReactDom.render(<App passedPropTitle={title} passedPropMod={moderator} passedPropAllPosts={allPostInDB}/>, document.getElementById("content"));
