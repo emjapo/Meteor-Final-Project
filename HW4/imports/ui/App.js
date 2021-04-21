@@ -10,8 +10,10 @@ export default class App extends React.Component {
         return (
             <>
                 <TitleBar title={this.props.passedPropTitle} moderator={this.props.passedPropMod}/>
-                <AddTopics />
-                <TopicList passed_posts={this.props.passedPropAllPosts}/>
+                <div className='wrapper'>
+                    <AddTopics />
+                    <TopicList passed_posts={this.props.passedPropAllPosts}/>
+                </div>
             </>
         );
     }

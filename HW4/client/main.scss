@@ -1,25 +1,2 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+@import '../imports/client/styles/_main.scss';
 
-html {
-  font-size: 62.5%;
-}
-
-h1 { // child of title-bar
-  font-weight: 300;
-  font-size: 2.4rem;
-}
-
-.title-bar {
-  background-color:#bada55;
-  text-align: center;
-}
-
-.wrapper { // for centering
-  margin: 0 auto;
-  max-width: 50rem;
-  padding: 1.3rem;
-  background-color: #24fffe;
-}
