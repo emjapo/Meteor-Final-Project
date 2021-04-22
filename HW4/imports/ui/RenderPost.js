@@ -9,7 +9,7 @@ import ReplyList from './ReplyList.js';
 export default class RenderPost extends React.Component {
     render() {
         let postID = this.props.post._id;
-        let repliesForPostFromDB = Reply_Collection_Access.find({postID: postID}, {sort: {votes: -1}}).fetch();
+        let repliesForPostFromDB = Reply_Collection_Access.find({post: postID}, {sort: {votes: -1}}).fetch();
         return (
             <>
                 <div key={this.props.post._id} className='singleItemStyle'>{this.props.post.topic} have {this.props.post.votes} vote[s] {' '}
