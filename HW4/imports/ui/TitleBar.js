@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 export default class TitleBar extends React.Component {
   renderModerator() {
     if(this.props.moderator) {
-      return <p>Moderator: {this.props.moderator}</p>
+      return <p className="title-bar__moderator">Moderator: {this.props.moderator}</p>
     } else {
-      return <p>Moderator: unknown</p>
+      return <p className="title-bar__moderator">Moderator: unknown</p>
     }
   }
 

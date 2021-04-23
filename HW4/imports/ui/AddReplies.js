@@ -22,9 +22,9 @@ export default class AddReplies extends React.Component {
     render() {
       return (
         <div className="singleItemStyle singleItemStyle--reply">
-          <form onSubmit={this.processFormData.bind(this)}>
+          <form className="form" onSubmit={this.processFormData.bind(this)}>
               <input type="hidden" name="postID" value={this.props.postID} />
-            <input type="text" name="ReplyFromForm" placeholder="Leave a comment" />
+            <input className="form__input" type="text" name="ReplyFromForm" placeholder="Leave a comment" />
             <button className="button">Post</button>
           </form>
         </div>

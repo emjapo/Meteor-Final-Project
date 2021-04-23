@@ -21,8 +21,8 @@ export default class AddTopics extends React.Component {
     render() {
       return (
         <div className="singleItemStyle">
-          <form onSubmit={this.processFormData.bind(this)}>
-            <input type="text" name="topicFromForm" placeholder="Topic Here" />
+          <form className="form" onSubmit={this.processFormData.bind(this)}>
+            <input className="form__input" type="text" name="topicFromForm" placeholder="Topic Here" />
             <button className="button">Add Topic</button>
           </form>
         </div>

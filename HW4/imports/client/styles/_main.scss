@@ -17,6 +17,10 @@ h1 { // child of title-bar
     font-size: 4rem;
     font-family: 'Permanent Marker', cursive;
 }
+
+input, button, select {
+    font-size: 1.4rem;
+}
   
 @import './components/_titlebar.scss';
 @import './components/wrapper';
@@ -24,4 +28,5 @@ h1 { // child of title-bar
 @import './components/footer';
 @import './components/votes';
 @import './components/button';
+@import './components/form';
 
