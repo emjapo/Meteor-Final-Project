@@ -1,8 +1,10 @@
 .singleItemStyle {
     background-color: #eee;
-    border: 2px #111 solid;
-    margin-top: .5rem;
+    //border: 2px #111 solid;
+    margin: .5rem;
     padding: 1.3rem;
+    border-radius: 15px;
+    
 }
 
 .singleItemStyle--comment {
@@ -10,3 +12,15 @@
     border: none;
     color: #444;
 }
+
+.singleItemStyle--reply {
+   border: 1px #456363 solid;
+   filter: drop-shadow(5px 5px .5rem #456363);
+}
+
+.singleItemStyle--replyList {
+    //border: 1px #444 solid;
+    padding: 5px;
+    padding-left: 2rem;
+    border-radius: 15px;
+ }

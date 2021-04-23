@@ -10,6 +10,7 @@ export default class AddTopics extends React.Component {
     if(newTopic) {
       event.target.topicFromForm.value = '';
       UP_Collection_Access.insert({
+        createdAt: Date.now(),
         topic: newTopic,
         votes: 0,
       });

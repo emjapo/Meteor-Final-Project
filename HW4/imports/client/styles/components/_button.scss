@@ -1,5 +1,5 @@
 .button {
-    color: green;
+    color: #301934;
     border: 1.5px solid #dddddd;
     cursor: pointer;
     font-weight: 600;
@@ -12,6 +12,7 @@
     &:hover, &:focus {
         background: #456363;
         color: #eeeeee;
+        border-color: #456363;
     }
 
     &:active {

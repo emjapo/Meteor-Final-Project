@@ -12,19 +12,23 @@ export default class RenderPost extends React.Component {
         let repliesForPostFromDB = Reply_Collection_Access.find({post: postID}, {sort: {votes: -1}}).fetch();
         return (
             <>
-                <div key={this.props.post._id} className='singleItemStyle'>{this.props.post.topic} have {this.props.post.votes} vote[s] {' '}
-                    <button className="button button--round" onClick={() => {
-                        UP_Collection_Access.update({_id: this.props.post._id}, {$inc: {votes: 1}});
-                    }}>+1</button>
-                    <button className="button button--round" onClick={() => {
-                        UP_Collection_Access.update({_id: this.props.post._id}, {$inc: {votes: -1}});
-                    }}>-1</button>
-                    <button className="button button--round" onClick={() => {
-                        UP_Collection_Access.remove({_id: this.props.post._id});
-                    }}>X</button>
-                    <div className="singleItemStyle--reply">
-                        <AddReplies postID={this.props.post._id}/>
+                <div key={this.props.post._id} className='singleItemStyle'>
+                    {this.props.post.topic}
+                    <div className="votesSystem">
+                        {this.props.post.votes} vote[s] {' '}
+                        <button className="button button--round" onClick={() => {
+                            UP_Collection_Access.update({_id: this.props.post._id}, {$inc: {votes: 1}});
+                        }}>+1</button>
+                        <button className="button button--round" onClick={() => {
+                            UP_Collection_Access.update({_id: this.props.post._id}, {$inc: {votes: -1}});
+                        }}>-1</button>
+                        <button className="button button--round" onClick={() => {
+                            UP_Collection_Access.remove({_id: this.props.post._id});
+                        }}>X</button>
+                    </div>
+                    <div className="singleItemStyle--replyList">
                         <ReplyList passed_replies={repliesForPostFromDB}/>
+                        <AddReplies postID={this.props.post._id}/>
                     </div>
                 </div>
                
