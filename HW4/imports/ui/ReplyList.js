@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RenderReply from './RenderReply.js';
+import FlipMove from 'react-flip-move';
 
 
 
@@ -15,7 +16,9 @@ export default class ReplyList extends React.Component {
     render(){
         return (
             <>
-                {this.renderAllReplies()}
+                <FlipMove delay={200} maintainContainerHeight={true} leaveAnimation='accordianVertical' enterAnimation='fade'>
+                    {this.renderAllReplies()}
+                </FlipMove>
             </>
         );
     }
