@@ -16,7 +16,7 @@ export default class ReplyList extends React.Component {
     render(){
         return (
             <>
-                <FlipMove delay={200} maintainContainerHeight={true} leaveAnimation='accordianVertical' enterAnimation='fade'>
+                <FlipMove delay={200} maintainContainerHeight={true} enterAnimation='fade'>
                     {this.renderAllReplies()}
                 </FlipMove>
             </>

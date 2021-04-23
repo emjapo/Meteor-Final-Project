@@ -24,6 +24,9 @@ export default class RenderPost extends React.Component {
                         }}>-1</button>
                         <button className="button button--round" onClick={() => {
                             UP_Collection_Access.remove({_id: this.props.post._id});
+                            repliesForPostFromDB.map((reply) => {
+                                Reply_Collection_Access.remove({_id: reply._id});
+                            });
                         }}>X</button>
                     </div>
                     <div className="singleItemStyle--replyList">
