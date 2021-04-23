@@ -1,14 +1,13 @@
 import React from 'react';
 import {Meteor} from 'meteor/meteor';
-import Blaze from 'meteor/gadicc:blaze-react-component';
+import Blaze from 'meteor/gadicc:blaze-react-component'; // this allows blaze templates to be converted into components
 
 export default class Login extends React.Component{
-    render() {
+    render() { // OAuth URI is not compatable with localhost:3000
         return (
             <div>
-                <h1>Login to FakeBook using Google</h1>
+                <p>Login using Google</p>
                 <Blaze template="loginButtons" />
-               
             </div>
         );
     }

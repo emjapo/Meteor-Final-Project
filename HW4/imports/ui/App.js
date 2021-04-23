@@ -9,7 +9,8 @@ import PropTypes from 'prop-types';
 
 export default class App extends React.Component {
     render() {
-        if (!Meteor.user()) {
+        if (!Meteor.user()) { // if I can get it deployed on GCP, then this ! will need to be removed to allow for Google login
+            // Carroll labs do not allow students to install google-cloud-sdk so I can not upload to GCP
             return (
                 <>
                     <TitleBar title={this.props.passedPropTitle} moderator={this.props.passedPropMod}/>
@@ -23,6 +24,7 @@ export default class App extends React.Component {
         } else {
             return (
                 <>
+                    <TitleBar title={this.props.passedPropTitle} />
                     <Login />
                 </>
             );
